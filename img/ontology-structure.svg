@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <style>
+      text { font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', 'Helvetica Neue', Arial, sans-serif; }
+      .title { font-size: 20px; font-weight: bold; fill: #1a237e; }
+      .subtitle { font-size: 11px; fill: #5c6bc0; }
+      .box-label { font-size: 13px; font-weight: bold; fill: #ffffff; }
+      .box-sublabel { font-size: 10px; fill: rgba(255,255,255,0.85); }
+      .example-text { font-size: 10px; fill: #37474f; }
+      .arrow-label { font-size: 9px; fill: #546e7a; font-style: italic; }
+      .relation-tag { font-size: 9.5px; fill: #ffffff; font-weight: bold; }
+    </style>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2.5" flood-color="#90a4ae" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowGray" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#78909c"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#42a5f5"/>
+    </marker>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5f7fa"/>
+      <stop offset="100%" stop-color="#e8eaf6"/>
+    </linearGradient>
+    <linearGradient id="classGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1565c0"/>
+      <stop offset="100%" stop-color="#1e88e5"/>
+    </linearGradient>
+    <linearGradient id="instanceGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00838f"/>
+      <stop offset="100%" stop-color="#00acc1"/>
+    </linearGradient>
+    <linearGradient id="propGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4527a0"/>
+      <stop offset="100%" stop-color="#7e57c2"/>
+    </linearGradient>
+    <linearGradient id="relGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2e7d32"/>
+      <stop offset="100%" stop-color="#43a047"/>
+    </linearGradient>
+    <linearGradient id="axiomGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#bf360c"/>
+      <stop offset="100%" stop-color="#e64a19"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="8" fill="url(#bgGrad)"/>
+  <rect x="10" y="10" width="780" height="480" rx="6" fill="none" stroke="#c5cae9" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="400" y="42" text-anchor="middle" class="title">온톨로지 (Ontology) 구조</text>
+  <text x="400" y="60" text-anchor="middle" class="subtitle">핵심 구성 요소와 관계 — Core Components &amp; Relationships</text>
+  <line x1="200" y1="70" x2="600" y2="70" stroke="#c5cae9" stroke-width="1"/>
+
+  <!-- ==================== ROW 1: 클래스 & 인스턴스 ==================== -->
+
+  <!-- 클래스 (Class) Box -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="95" width="180" height="70" rx="8" fill="url(#classGrad)"/>
+  </g>
+  <text x="150" y="120" text-anchor="middle" class="box-label">클래스 (Class)</text>
+  <text x="150" y="137" text-anchor="middle" class="box-sublabel">개념의 범주 정의</text>
+  <!-- examples -->
+  <rect x="80" y="145" width="50" height="16" rx="4" fill="rgba(255,255,255,0.2)"/>
+  <text x="105" y="156" text-anchor="middle" class="box-sublabel">동물</text>
+  <rect x="140" y="145" width="50" height="16" rx="4" fill="rgba(255,255,255,0.2)"/>
+  <text x="165" y="156" text-anchor="middle" class="box-sublabel">포유류</text>
+
+  <!-- 인스턴스 (Instance) Box -->
+  <g filter="url(#shadow)">
+    <rect x="310" y="95" width="180" height="70" rx="8" fill="url(#instanceGrad)"/>
+  </g>
+  <text x="400" y="120" text-anchor="middle" class="box-label">인스턴스 (Instance)</text>
+  <text x="400" y="137" text-anchor="middle" class="box-sublabel">클래스의 구체적 개체</text>
+  <rect x="325" y="145" width="60" height="16" rx="4" fill="rgba(255,255,255,0.2)"/>
+  <text x="355" y="156" text-anchor="middle" class="box-sublabel">강아지1</text>
+  <rect x="395" y="145" width="60" height="16" rx="4" fill="rgba(255,255,255,0.2)"/>
+  <text x="425" y="156" text-anchor="middle" class="box-sublabel">고양이1</text>
+
+  <!-- Arrow: 클래스 → 인스턴스 -->
+  <line x1="240" y1="130" x2="305" y2="130" stroke="#78909c" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+  <text x="272" y="124" text-anchor="middle" class="arrow-label">생성</text>
+
+  <!-- ==================== ROW 2: 속성 (Property) ==================== -->
+
+  <!-- 속성 (Property) main box -->
+  <g filter="url(#shadow)">
+    <rect x="560" y="95" width="200" height="70" rx="8" fill="url(#propGrad)"/>
+  </g>
+  <text x="660" y="117" text-anchor="middle" class="box-label">속성 (Property)</text>
+  <!-- sub-boxes -->
+  <rect x="570" y="127" width="85" height="30" rx="4" fill="rgba(255,255,255,0.15)"/>
+  <text x="612" y="140" text-anchor="middle" class="box-sublabel" style="font-size:8.5px">객체 속성</text>
+  <text x="612" y="152" text-anchor="middle" class="box-sublabel" style="font-size:7.5px">(Object Property)</text>
+  <rect x="665" y="127" width="85" height="30" rx="4" fill="rgba(255,255,255,0.15)"/>
+  <text x="707" y="140" text-anchor="middle" class="box-sublabel" style="font-size:8.5px">데이터 속성</text>
+  <text x="707" y="152" text-anchor="middle" class="box-sublabel" style="font-size:7.5px">(Data Property)</text>
+
+  <!-- Arrow: 인스턴스 → 속성 -->
+  <line x1="490" y1="130" x2="555" y2="130" stroke="#78909c" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+  <text x="522" y="124" text-anchor="middle" class="arrow-label">기술</text>
+
+  <!-- ==================== ROW 3: 관계 (Relationship) ==================== -->
+
+  <g filter="url(#shadow)">
+    <rect x="120" y="220" width="260" height="90" rx="8" fill="url(#relGrad)"/>
+  </g>
+  <text x="250" y="247" text-anchor="middle" class="box-label">관계 (Relationship)</text>
+  <text x="250" y="264" text-anchor="middle" class="box-sublabel">개체 간의 의미적 연결</text>
+
+  <!-- Relation tags -->
+  <rect x="140" y="275" width="55" height="22" rx="11" fill="rgba(255,255,255,0.25)"/>
+  <text x="167" y="290" text-anchor="middle" class="relation-tag">is-a</text>
+  <rect x="205" y="275" width="55" height="22" rx="11" fill="rgba(255,255,255,0.25)"/>
+  <text x="232" y="290" text-anchor="middle" class="relation-tag">has-a</text>
+  <rect x="270" y="275" width="65" height="22" rx="11" fill="rgba(255,255,255,0.25)"/>
+  <text x="302" y="290" text-anchor="middle" class="relation-tag">part-of</text>
+
+  <!-- Arrow: 클래스 → 관계 -->
+  <path d="M150,165 L150,185 Q150,195 160,195 L200,195 Q210,195 210,205 L210,215" fill="none" stroke="#42a5f5" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+  <text x="168" y="192" class="arrow-label">정의</text>
+
+  <!-- Arrow: 인스턴스 → 관계 -->
+  <path d="M370,165 L370,185 Q370,195 360,195 L310,195 Q300,195 300,205 L300,215" fill="none" stroke="#42a5f5" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+  <text x="348" y="192" class="arrow-label">연결</text>
+
+  <!-- ==================== ROW 3: 공리 (Axiom) ==================== -->
+
+  <g filter="url(#shadow)">
+    <rect x="450" y="220" width="300" height="90" rx="8" fill="url(#axiomGrad)"/>
+  </g>
+  <text x="600" y="247" text-anchor="middle" class="box-label">공리 (Axiom)</text>
+  <text x="600" y="264" text-anchor="middle" class="box-sublabel">제약 조건과 규칙 — Constraints &amp; Rules</text>
+
+  <!-- Axiom examples -->
+  <rect x="465" y="275" width="130" height="22" rx="4" fill="rgba(255,255,255,0.18)"/>
+  <text x="530" y="290" text-anchor="middle" class="box-sublabel" style="font-size:9px">∀ 포유류 → 동물</text>
+  <rect x="605" y="275" width="130" height="22" rx="4" fill="rgba(255,255,255,0.18)"/>
+  <text x="670" y="290" text-anchor="middle" class="box-sublabel" style="font-size:9px">disjoint(개, 고양이)</text>
+
+  <!-- Arrow: 속성 → 공리 -->
+  <path d="M660,165 L660,185 Q660,195 650,195 L620,195 Q610,195 610,205 L610,215" fill="none" stroke="#42a5f5" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+  <text x="648" y="192" class="arrow-label">제약</text>
+
+  <!-- ==================== BOTTOM: Interaction Diagram ==================== -->
+
+  <line x1="60" y1="340" x2="740" y2="340" stroke="#c5cae9" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="400" y="360" text-anchor="middle" class="subtitle">구성 요소 간 상호작용 예시</text>
+
+  <!-- Mini example: Class hierarchy -->
+  <rect x="60" y="380" width="90" height="32" rx="6" fill="#e3f2fd" stroke="#1e88e5" stroke-width="1.5"/>
+  <text x="105" y="400" text-anchor="middle" style="font-size:11px; fill:#1565c0; font-weight:bold; font-family:sans-serif;">동물</text>
+
+  <line x1="150" y1="396" x2="185" y2="396" stroke="#78909c" stroke-width="1.2" marker-end="url(#arrowGray)"/>
+  <text x="167" y="390" text-anchor="middle" class="arrow-label">is-a</text>
+
+  <rect x="190" y="380" width="90" height="32" rx="6" fill="#e3f2fd" stroke="#1e88e5" stroke-width="1.5"/>
+  <text x="235" y="400" text-anchor="middle" style="font-size:11px; fill:#1565c0; font-weight:bold; font-family:sans-serif;">포유류</text>
+
+  <line x1="280" y1="396" x2="315" y2="396" stroke="#78909c" stroke-width="1.2" marker-end="url(#arrowGray)"/>
+  <text x="297" y="390" text-anchor="middle" class="arrow-label">is-a</text>
+
+  <rect x="320" y="380" width="70" height="32" rx="6" fill="#e3f2fd" stroke="#1e88e5" stroke-width="1.5"/>
+  <text x="355" y="400" text-anchor="middle" style="font-size:11px; fill:#1565c0; font-weight:bold; font-family:sans-serif;">개</text>
+
+  <!-- Instance -->
+  <line x1="355" y1="412" x2="355" y2="432" stroke="#00acc1" stroke-width="1.2" marker-end="url(#arrowGray)"/>
+  <text x="375" y="428" class="arrow-label">instance-of</text>
+
+  <ellipse cx="355" cy="452" rx="45" ry="18" fill="#e0f7fa" stroke="#00acc1" stroke-width="1.5"/>
+  <text x="355" y="457" text-anchor="middle" style="font-size:10px; fill:#006064; font-weight:bold; font-family:sans-serif;">강아지1</text>
+
+  <!-- Property arrow from instance -->
+  <line x1="400" y1="452" x2="460" y2="452" stroke="#7e57c2" stroke-width="1.2" marker-end="url(#arrowGray)"/>
+  <text x="430" y="445" text-anchor="middle" class="arrow-label">has</text>
+
+  <!-- Property diamonds -->
+  <g transform="translate(500,452)">
+    <rect x="-30" y="-14" width="60" height="28" rx="4" fill="#ede7f6" stroke="#7e57c2" stroke-width="1.2"/>
+    <text x="0" y="4" text-anchor="middle" style="font-size:10px; fill:#4527a0; font-family:sans-serif;">이름</text>
+  </g>
+  <g transform="translate(580,452)">
+    <rect x="-30" y="-14" width="60" height="28" rx="4" fill="#ede7f6" stroke="#7e57c2" stroke-width="1.2"/>
+    <text x="0" y="4" text-anchor="middle" style="font-size:10px; fill:#4527a0; font-family:sans-serif;">나이</text>
+  </g>
+  <g transform="translate(660,452)">
+    <rect x="-30" y="-14" width="60" height="28" rx="4" fill="#ede7f6" stroke="#7e57c2" stroke-width="1.2"/>
+    <text x="0" y="4" text-anchor="middle" style="font-size:10px; fill:#4527a0; font-family:sans-serif;">먹이</text>
+  </g>
+
+  <!-- Connecting lines between properties -->
+  <line x1="530" y1="452" x2="550" y2="452" stroke="#b39ddb" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="610" y1="452" x2="630" y2="452" stroke="#b39ddb" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Legend -->
+  <g transform="translate(60, 430)">
+    <rect x="0" y="0" width="8" height="8" rx="2" fill="#1e88e5"/>
+    <text x="14" y="8" style="font-size:8px; fill:#546e7a; font-family:sans-serif;">클래스</text>
+  </g>
+  <g transform="translate(110, 430)">
+    <ellipse cx="4" cy="4" rx="5" ry="4" fill="#00acc1"/>
+    <text x="14" y="8" style="font-size:8px; fill:#546e7a; font-family:sans-serif;">인스턴스</text>
+  </g>
+  <g transform="translate(175, 430)">
+    <rect x="0" y="0" width="8" height="8" rx="1" fill="#7e57c2"/>
+    <text x="14" y="8" style="font-size:8px; fill:#546e7a; font-family:sans-serif;">속성</text>
+  </g>
+</svg>

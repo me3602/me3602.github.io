@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450" width="700" height="450">
+  <defs>
+    <style>
+      text { font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', 'Helvetica Neue', Arial, sans-serif; }
+      .title { font-size: 18px; font-weight: bold; fill: #1a237e; }
+      .subtitle { font-size: 11px; fill: #5c6bc0; }
+      .layer-label { font-size: 14px; font-weight: bold; fill: #ffffff; }
+      .layer-sublabel { font-size: 10.5px; fill: rgba(255,255,255,0.88); }
+      .side-note { font-size: 9px; fill: #78909c; }
+    </style>
+    <filter id="shadow" x="-2%" y="-4%" width="104%" height="112%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-color="#455a64" flood-opacity="0.2"/>
+    </filter>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5f7fa"/>
+      <stop offset="100%" stop-color="#e8eaf6"/>
+    </linearGradient>
+    <!-- Layer gradients — light at bottom, dark at top -->
+    <linearGradient id="layer1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#b0bec5"/>
+      <stop offset="100%" stop-color="#90a4ae"/>
+    </linearGradient>
+    <linearGradient id="layer2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#80cbc4"/>
+      <stop offset="100%" stop-color="#4db6ac"/>
+    </linearGradient>
+    <linearGradient id="layer3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4fc3f7"/>
+      <stop offset="100%" stop-color="#29b6f6"/>
+    </linearGradient>
+    <linearGradient id="layer4" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#42a5f5"/>
+      <stop offset="100%" stop-color="#1e88e5"/>
+    </linearGradient>
+    <linearGradient id="layer5" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5c6bc0"/>
+      <stop offset="100%" stop-color="#3f51b5"/>
+    </linearGradient>
+    <linearGradient id="layer6" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3949ab"/>
+      <stop offset="100%" stop-color="#283593"/>
+    </linearGradient>
+    <linearGradient id="layer7" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1a237e"/>
+      <stop offset="100%" stop-color="#0d1642"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="450" rx="8" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="350" y="36" text-anchor="middle" class="title">시맨틱 웹 기술 스택</text>
+  <text x="350" y="54" text-anchor="middle" class="subtitle">Semantic Web Technology Stack (Layer Cake)</text>
+  <line x1="180" y1="64" x2="520" y2="64" stroke="#c5cae9" stroke-width="1"/>
+
+  <!-- 
+    Pyramid layers — each layer is a trapezoid, wider at bottom.
+    7 layers, each ~46px tall, starting at y=80.
+    Bottom layer: full width ~620px, top layer: ~220px.
+    Center at x=350.
+  -->
+
+  <!-- Layer 7 (TOP): 응용 / 신뢰 -->
+  <g filter="url(#shadow)">
+    <path d="M245,82 L455,82 L445,124 L255,124 Z" fill="url(#layer7)"/>
+  </g>
+  <text x="350" y="101" text-anchor="middle" class="layer-label" style="font-size:12.5px">응용 (Applications)</text>
+  <text x="350" y="117" text-anchor="middle" class="layer-sublabel">신뢰 (Trust) · 증명 (Proof)</text>
+
+  <!-- Layer 6: 규칙 / 추론 -->
+  <g filter="url(#shadow)">
+    <path d="M220,130 L480,130 L468,172 L232,172 Z" fill="url(#layer6)"/>
+  </g>
+  <text x="350" y="149" text-anchor="middle" class="layer-label" style="font-size:13px">규칙 · 추론</text>
+  <text x="350" y="165" text-anchor="middle" class="layer-sublabel">(Rules / Reasoning)</text>
+
+  <!-- Layer 5: SPARQL -->
+  <g filter="url(#shadow)">
+    <path d="M195,178 L505,178 L491,220 L209,220 Z" fill="url(#layer5)"/>
+  </g>
+  <text x="350" y="197" text-anchor="middle" class="layer-label">SPARQL</text>
+  <text x="350" y="213" text-anchor="middle" class="layer-sublabel">질의 언어 (Query Language)</text>
+
+  <!-- Layer 4: OWL -->
+  <g filter="url(#shadow)">
+    <path d="M170,226 L530,226 L514,268 L186,268 Z" fill="url(#layer4)"/>
+  </g>
+  <text x="350" y="245" text-anchor="middle" class="layer-label">OWL (Web Ontology Language)</text>
+  <text x="350" y="261" text-anchor="middle" class="layer-sublabel">웹 온톨로지 언어</text>
+
+  <!-- Layer 3: RDF / RDFS -->
+  <g filter="url(#shadow)">
+    <path d="M145,274 L555,274 L537,316 L163,316 Z" fill="url(#layer3)"/>
+  </g>
+  <text x="350" y="293" text-anchor="middle" class="layer-label">RDF / RDFS</text>
+  <text x="350" y="309" text-anchor="middle" class="layer-sublabel">자원 기술 프레임워크 (Resource Description Framework)</text>
+
+  <!-- Layer 2: XML + Namespaces -->
+  <g filter="url(#shadow)">
+    <path d="M120,322 L580,322 L560,364 L140,364 Z" fill="url(#layer2)"/>
+  </g>
+  <text x="350" y="341" text-anchor="middle" class="layer-label">XML + Namespaces</text>
+  <text x="350" y="357" text-anchor="middle" class="layer-sublabel">확장 마크업 언어 · 네임스페이스</text>
+
+  <!-- Layer 1 (BOTTOM): URI / Unicode -->
+  <g filter="url(#shadow)">
+    <path d="M95,370 L605,370 L600,412 L100,412 Z" fill="url(#layer1)"/>
+  </g>
+  <text x="350" y="389" text-anchor="middle" class="layer-label">URI / Unicode</text>
+  <text x="350" y="405" text-anchor="middle" class="layer-sublabel">식별자 · 문자 인코딩 (Identifiers · Character Encoding)</text>
+
+  <!-- Side annotations — left arrow bracket -->
+  <line x1="72" y1="90" x2="72" y2="405" stroke="#90a4ae" stroke-width="1.2"/>
+  <line x1="72" y1="90" x2="80" y2="90" stroke="#90a4ae" stroke-width="1.2"/>
+  <line x1="72" y1="405" x2="80" y2="405" stroke="#90a4ae" stroke-width="1.2"/>
+  <text x="66" y="255" text-anchor="middle" class="side-note" transform="rotate(-90, 66, 255)">추상화 수준 증가 →</text>
+
+  <!-- Right side annotations -->
+  <text x="622" y="103" class="side-note" style="fill:#7986cb">← 사용자 영역</text>
+  <text x="622" y="199" class="side-note" style="fill:#7986cb">← 데이터 접근</text>
+  <text x="622" y="295" class="side-note" style="fill:#7986cb">← 데이터 표현</text>
+  <text x="622" y="391" class="side-note" style="fill:#7986cb">← 기반 기술</text>
+
+  <!-- Bottom note -->
+  <text x="350" y="438" text-anchor="middle" style="font-size:9.5px; fill:#78909c; font-family:sans-serif;">
+    W3C 시맨틱 웹 표준 기술 계층 — 아래에서 위로 점진적으로 의미(semantics)가 풍부해집니다.
+  </text>
+</svg>
