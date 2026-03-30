@@ -1,7 +1,9 @@
 ---
 layout: post
 title: "GraphRAG 기술 리서치"
+subtitle: "Microsoft Research의 차세대 RAG 기술 분석"
 date: 2025-01-02
+background: '/img/bg-post.jpg'
 ---
 
 ## 목차
